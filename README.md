@@ -17,3 +17,9 @@
 1. Open the extension by clicking on the extension icon.
 2. Click on the button look like a Calendar.
 3. Select the calendar you want to import and add it to your calendar.
+
+// put my contact info here
+## Contact
+
+- Email: davidmgr@gmail.com
+- Twitter: [@davidmgr93](https://twitter.com/davidmgr93)
