@@ -1,6 +1,3 @@
-// explane how to add the extension in a navigator and how to use it
-// explain how to use the extension
-
 # How to import the extension in a navigator
 
 ## Chrome
