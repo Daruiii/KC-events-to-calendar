@@ -1,0 +1,31 @@
+{ "manifest_version": 3, 
+  "name": "KC to Calendar", 
+  "description": "Add events from the Karmine Corp to your Google Calendar",
+  "version": "0.1.0", 
+  "background": { 
+    "service_worker": "main.js",
+    "type": "module"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "alarms",
+        "notifications",
+        "declarativeContent",
+        "scripting",
+        "webNavigation",
+        "webRequest" ],
+    "host_permissions":[
+        "*://*/*"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "./src/img/logo.png"
+    },
+    "icons": {
+        "16": "./src/img/logo.png",
+        "48": "./src/img/logo.png",
+        "128": "./src/img/logo.png"
+    }
+}

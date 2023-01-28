@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC To Calendar</title>
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/popupCalendar.css">
+</head>
+<body  style="background-color: #131a2c; color: white; width: 500px; min-height: 250px;">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="row w-100 p-3" style="background-color: #20243c; border-bottom: 3px solid #04ccfc;">
+            <div class="col-12 text-center">
+                <img src="./src/img/logo.png" alt="Karmine Corp Logo" width="30px" height="30px">
+                <!-- <img src="./src/img/logoGoogleAgenda.png" alt="Google Agenda Logo" width="40px" height="30px"> -->
+            </div>
+        </div>
+        <div class="row" style="border-bottom: 1px solid #04ccfc;">
+            <div class="col-12 text-center mt-3 mb-3">
+                <h5 class="text-center">Rajoute les prochains évènements de Karmine Corp à ton calendrier Google ou Outlook</h5>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-12 text-center mt-3 mb-3">
+                <h5 class="text-center">Prochains évènements</h5>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-start align-items-center text-uppercase w-100"  style="color: #04ccfc;">
+           <p class="ms-3 me-2">Compétition</p>
+              <p class="ms-3 me-2">Match</p>
+                <p class="ms-5">Date</p>
+                  <p class="ms-4">Heure</p>
+                  <p class="ms-2">Ajouter</p>
+        </div>
+        <div class="row">
+            <div class="col-18 text-center mt-3 mb-3">
+                <div id="events"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./src/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./src/js/bootstrap.min.js"></script>
+    <script type="text/javascript" type="module" src="./src/js/index.js"></script>
+</body>
+</html>
