@@ -7,24 +7,24 @@
         data.forEach(event => {
             // create a new element list item for each event and add it to the list
             const eventElement = document.createElement('div');
-            eventElement.className = 'd-flex justify-content-between flex-row align-items-center mb-3 rounded-3 pt-3 px-5';
+            eventElement.className = 'd-flex justify-content-center flex-row align-items-center mb-3 rounded-3 px-4';
             eventElement.style.backgroundColor = '#1c243c';
             eventElement.innerHTML = `
-            <div class="col-xs-3">
+            <div class="col-xs-3 mt-3">
                 <p><a class="hover-url" href="${event.link}" target="_blank">${event.initial}</a></p>
             </div>
-            <div class="col-xs-3 d-flex justify-content-between flex-row align-items-center mb-3 ms-3">
-                <img class="ms-3" src="${event.team_domicile}" class="img-fluid" width="25" height="25">
-                <p class="mt-3 ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
+            <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
+                <img class="" src="${event.team_domicile}" class="img-fluid" width="25" height="25">
+                <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
                 <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25">
             </div>
-            <div class="col-xs-3 ms-3 fw-bold" style="color:#a5a19a;">
+            <div class="col-xs-3 ms-3 fw-bold mt-3" style="color:#a5a19a;">
                 <p>${event.start.slice(0, 10).replace(/-/g, '/')}</p>
             </div>
-            <div class="col-xs-3 ms-2 fw-bold" style="color:#a5a19a;">
+            <div class="col-xs-3 ms-2 fw-bold mt-3" style="color:#a5a19a;">
                 <p>${event.end.slice(11, 16)}</p>
             </div>
-            <button class="btn ms-3 col-xs-3 mb-3" id="${event.title}" style="background-color: #1c243c; color: #fff;"> <img src="./src/img/addToCalendar.png" alt="Google Agenda Logo" width="25px" height="25px"> </button>
+            <button class="btn ms-3 col-xs-3" id="${event.title}" style="background-color: #1c243c; color: #fff;"> <img src="./src/img/addToCalendar.png" alt="Google Agenda Logo" width="25px" height="25px"> </button>
 
             `;
             events.appendChild(eventElement);
