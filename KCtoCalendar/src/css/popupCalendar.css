@@ -26,6 +26,7 @@
     }
 
     .hover-url:hover{
+        transition: 0.5s;
         color: #224e79;
         text-decoration : underline;
     }
