@@ -11,20 +11,20 @@
             eventElement.style.backgroundColor = '#1c243c';
             eventElement.innerHTML = `
             <div class="col-xs-3">
-                <p><a class="text-decoration-none" href="${event.link}">${event.initial}</a></p>
+                <p><a class="hover-url" href="${event.link}" target="_blank">${event.initial}</a></p>
             </div>
             <div class="col-xs-3 d-flex justify-content-between flex-row align-items-center mb-3 ms-3">
                 <img class="ms-3" src="${event.team_domicile}" class="img-fluid" width="25" height="25">
-                <p class="mt-3 ms-2"> VS </p>
+                <p class="mt-3 ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
                 <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25">
             </div>
-            <div class="col-xs-3 ms-3">
-                <p>${event.start.slice(0, 10)}</p>
+            <div class="col-xs-3 ms-3 fw-bold" style="color:#a5a19a;">
+                <p>${event.start.slice(0, 10).replace(/-/g, '/')}</p>
             </div>
-            <div class="col-xs-3 ms-2">
-                <p>${event.start.slice(11, 16)}</p>
+            <div class="col-xs-3 ms-2 fw-bold" style="color:#a5a19a;">
+                <p>${event.end.slice(11, 16)}</p>
             </div>
-            <button class="btn ms-2 col-xs-3 mb-3" id="${event.title}" style="background-color: #1c243c; color: #fff;"> <img src="./src/img/addToCalendar.png" alt="Google Agenda Logo" width="25px" height="25px"> </button>
+            <button class="btn ms-3 col-xs-3 mb-3" id="${event.title}" style="background-color: #1c243c; color: #fff;"> <img src="./src/img/addToCalendar.png" alt="Google Agenda Logo" width="25px" height="25px"> </button>
 
             `;
             events.appendChild(eventElement);
@@ -53,7 +53,7 @@
         // add an event listener to the button to save the event in the calendar
         const button2 = document.getElementById('outlookButton');
         button2.addEventListener('click', () => {
-            return window.open(`https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=${start}&enddt=${end}&subject=${title}&body=${competition_name} ${title} + lien liquipedia : ${liquipedia_link} ${initial}`);
+            return window.open(`https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&startdt=${start}&enddt=${end}&subject=${title}&body=${competition_name} ${title}+%0ALien liquipedia : ${liquipedia_link}`);
         });
 
         // add a button to save in google calendar
@@ -73,7 +73,7 @@
         end = end.replace(/-/g, '');
         end = end.replace(/:/g, '');
         end = end.replace(/\./g, '');
-            return window.open(`https://calendar.google.com/calendar/r/eventedit?text=${title}&dates=${start}/${end}&text=${title}&details=${competition_name} ${title} + lien liquipedia : ${liquipedia_link} ${initial}&location=null&sf=true&output=xml`);
+            return window.open(`https://calendar.google.com/calendar/r/eventedit?text=${title}&dates=${start}/${end}&text=${title}&details=${competition_name} ${title}+%0ALien liquipedia : ${liquipedia_link}&location=&sf=true&output=xml`);
         });
         
         // add an element who take all the extension screen
@@ -91,13 +91,7 @@
             popupClose.remove();
             popupDiv.remove();
         }
-
-
-
-// for google calendar
-//         return window.open(`https://calendar.google.com/calendar/r/eventedit?text=${title}&dates=${start}/${end}&text=${title}&details=${competition_name} ${title} + lien liquipedia : ${liquipedia_link} ${initial}&location=null&sf=true&output=xml`);
-
-//         // for outlook calendar
+//         // for outlook calendar with vcs
 //         const vcs = `BEGIN:VCALENDAR
 // VERSION:2.0
 // PRODID:-//Google Inc//Google Calendar 70.9054//EN
