@@ -19,13 +19,39 @@
     background: #131a2c; 
   }
 
+#results{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+/* width */
+#results::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  #results::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1c243c; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  #results::-webkit-scrollbar-thumb {
+    background: #131a2c; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  #results::-webkit-scrollbar-thumb:hover {
+    background: #0c111b; 
+  }
+
 #events{
     max-height: 200px;
     overflow-y: scroll;
 }
  /* width */
 #events::-webkit-scrollbar {
-    width: 3px;
+    width: 0px;
   }
   
   /* Track */
@@ -76,4 +102,14 @@
         transition: 0.5s;
         color: #224e79;
         text-decoration : underline;
+    }
+
+    #btnEvents{
+      color: #1b3fa6;
+      background-color: #04ccfc;
+    }
+
+    #btnResults{
+      color: #fff;
+      background-color: #1d253c;
     }
