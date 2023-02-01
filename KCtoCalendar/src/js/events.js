@@ -98,7 +98,7 @@
         const outlookButton = document.createElement('div');
         outlookButton.innerHTML = `
         <h5 class="text-center mb-3" style="color: #fff;">Ajouter à :</h5>
-        <button class="btn" id="outlookButton" style="background-color: #1c243c; color: #fff;">Outlook Calendar <img src="./src/img/outlookCalendar.png" alt="Outlook Logo" width="25px" height="25px"> </button>
+        <button class="btn" id="outlookButton">Outlook Calendar <img src="./src/img/outlookCalendar.png" alt="Outlook Logo" width="25px" height="25px"> </button>
         `;
         popupDiv.appendChild(outlookButton);
         // add an event listener to the button to save the event in the calendar
@@ -109,9 +109,9 @@
 
         // add a button to save in google calendar
         const googleButton = document.createElement('div');
-        googleButton.id = 'googleButton';
+        googleButton.id = 'googleButtonDiv';
         googleButton.innerHTML = `
-        <button class="btn mt-3" id="googleButton" style="background-color: #1c243c; color: #fff;">Google Agenda <img src="./src/img/logoGoogleAgenda.png" alt="Google Agenda Logo" width="40px" height="25px"> </button>
+        <button class="btn mt-3" id="googleButton">Google Agenda <img src="./src/img/logoGoogleAgenda.png" alt="Google Agenda Logo" width="40px" height="25px"> </button>
         `;
         popupDiv.appendChild(googleButton);
         // add an event listener to the button to save the event in the calendar

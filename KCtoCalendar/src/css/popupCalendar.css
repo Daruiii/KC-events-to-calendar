@@ -113,3 +113,21 @@
       color: #fff;
       background-color: #1d253c;
     }
+
+    /* .btn:hover{
+      transition: 0.5s;
+      background-color: #04ccfc;
+      color: #1b3fa6;
+    } */
+
+    #outlookButton,#googleButton{
+      color: #fff;
+      background-color: #1d253c;
+      font-weight: bold;
+    }
+
+    #outlookButton:hover,#googleButton:hover{
+      transition: 0.5s;
+      background-color: #04ccfc;
+      color: #1b3fa6;
+    }
