@@ -69,12 +69,26 @@
             <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
             <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25">
         </div>
+        `
+        // re set the date to avoid the bug of the date
+        let startMoreOneHour = new Date(event.start);
+        let endMoreOneHour = new Date(event.end);
+        // add one hour to the existing date to avoid the bug of the date
+        if (startMoreOneHour.toString().slice(16, 21) <=  Date.now().toString().slice(0, 10) && endMoreOneHour.toString().slice(16, 21) <= Date.now().toString().slice(0, 10)) {
+            eventElement.innerHTML += `
+        <div class="col-xs-3 ms-4 fw-bold mt-3" style="color:#a5a19a;">
+            <p>Match en cours</p>
+        </div>
+        `
+        } else {
+            eventElement.innerHTML += `
         <div class="col-xs-3 ms-3 fw-bold mt-3" style="color:#a5a19a;">
             <p>${event.start.slice(8, 10)}/${event.start.slice(5, 7)}/${event.start.slice(0, 4)}</p>
         </div>
         <div class="col-xs-3 ms-2 fw-bold mt-3" style="color:#a5a19a;">
-            <p>${event.end.slice(11, 16)}</p>
-        </div>
+            <p>${startMoreOneHour.toString().slice(16, 21)} </p>
+        </div>`}
+        eventElement.innerHTML += `
         <button class="btn ms-3 col-xs-3" id="${event.title}" style="background-color: #1c243c; color: #fff;"> <img src="./src/img/addToCalendar.png" alt="Google Agenda Logo" width="25px" height="25px"> </button>
 
         `;
