@@ -24,11 +24,22 @@
             <div class="col-xs-3 mt-3">
                 <p><a class="hover-url" href="${result.link}" target="_blank">${result.initial}</a></p>
             </div>
+            `
+            if (result.team_domicile == "null") {
+                resultElement.innerHTML += `
+                <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
+                    <p class="ms-2 fw-bold" style="color:#a5a19a;"> ${result.player.split(";")[0]} </p>
+                </div>
+                `
+            }
+            else {
+                resultElement.innerHTML += `
             <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
                 <img class="" src="${result.team_domicile}" class="img-fluid" width="25" height="25">
                 <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
                 <img class="ms-2" src="${result.team_exterieur}" class="img-fluid" width="25" height="25">
             </div>`
+            }
             if (result.score_exterieur == null) {
                 resultElement.innerHTML += `
                 <div class="col-xs-3 ms-4 fw-bold mt-3" style="color:${result.color};">
@@ -64,12 +75,22 @@
         <div class="col-xs-3 mt-3">
             <p><a class="hover-url" href="${event.link}" target="_blank">${event.initial}</a></p>
         </div>
+        `
+        if (event.team_domicile == "null") {
+            eventElement.innerHTML += `
+            <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
+                <p class="ms-2 fw-bold" style="color:#a5a19a;"> ${event.player.split(";")[0]} </p>
+            </div>
+            `
+        } else {
+            eventElement.innerHTML += `
         <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
             <img class="" src="${event.team_domicile}" class="img-fluid" width="25" height="25">
             <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
             <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25">
         </div>
         `
+        }
         // re set the date to avoid the bug of the date
         let startMoreOneHour = new Date(event.start);
         let endMoreOneHour = new Date(event.end);

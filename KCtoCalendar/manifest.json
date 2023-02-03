@@ -21,7 +21,8 @@
     ],
     "action": {
         "default_popup": "index.html",
-        "default_icon": "./src/img/logo.png"
+        "default_icon": "./src/img/logo.png",
+        "not_default_icon": "./src/img/logo.png"
     },
     "icons": {
         "16": "./src/img/logo.png",
