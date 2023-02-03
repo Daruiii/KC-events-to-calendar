@@ -94,11 +94,12 @@
         // re set the date to avoid the bug of the date
         let startMoreOneHour = new Date(event.start);
         let endMoreOneHour = new Date(event.end);
+        let dateNow = new Date();
         // add one hour to the existing date to avoid the bug of the date
-        if (startMoreOneHour.toString().slice(16, 21) <=  Date.now().toString().slice(0, 10) && endMoreOneHour.toString().slice(16, 21) <= Date.now().toString().slice(0, 10)) {
+        if (startMoreOneHour.toString().slice(16, 21) <=  dateNow.toString().slice(16, 21) && endMoreOneHour.toString().slice(16, 21) >= dateNow.toString().slice(16, 21)) {
             eventElement.innerHTML += `
-        <div class="col-xs-3 ms-4 fw-bold mt-3" style="color:#a5a19a;">
-            <p>Match en cours</p>
+        <div class="col-xs-3 ms-4 fw-bold mt-3">
+            <a class="encours" href="https://www.twitch.tv/kamet0" target="_blank"><p>Match en cours<p/></a>
         </div>
         `
         } else {

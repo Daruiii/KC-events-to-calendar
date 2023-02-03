@@ -131,3 +131,14 @@
       background-color: #04ccfc;
       color: #1b3fa6;
     }
+
+    .encours {
+      color:#820582;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .encours:hover {
+      transition: 0.5s;
+      color: #224e79;
+      text-decoration : underline;
+    }
