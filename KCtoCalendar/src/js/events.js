@@ -46,9 +46,9 @@
             else {
                 resultElement.innerHTML += `
             <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
-                <img class="" src="${result.team_domicile}" class="img-fluid" width="25" height="25">
+                <img class="" src="${result.team_domicile}" class="img-fluid" width="25" height="25" id="team-img">
                 <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
-                <img class="ms-2" src="${result.team_exterieur}" class="img-fluid" width="25" height="25">
+                <img class="ms-2" src="${result.team_exterieur}" class="img-fluid" width="25" height="25" id="team-img">
             </div>`
             }
             if (result.score_exterieur == null) {
@@ -109,9 +109,9 @@
         } else {
             eventElement.innerHTML += `
         <div class="col-xs-3 ms-5 align-items-start justify-content-center flex-row d-flex mt-3">
-            <img class="" src="${event.team_domicile}" class="img-fluid" width="25" height="25">
+            <img class="" src="${event.team_domicile}" class="img-fluid" width="25" height="25" id="team-img">
             <p class="ms-2 fw-bold" style="color:#a5a19a;"> VS </p>
-            <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25">
+            <img class="ms-2" src="${event.team_exterieur}" class="img-fluid" width="25" height="25" id="team-img">
         </div>
         `
         }
@@ -144,6 +144,12 @@
         button.addEventListener('click', () => {
             saveInCalendar(event.title, event.start, event.end, event.competition_name, event.team_domicile, event.team_exterieur, event.link, event.initial);
         });
+        let teamImg = document.querySelectorAll('#team-img');
+        teamImg.forEach(team => {
+            team.addEventListener('mouseover', () => {
+               team.title = team.src.replace(/^.*[\\\/]/, '').split(".")[0].replace(/_/g, " ").replace(/-/g, " ").replace(/%20/g, " ")
+            })
+        })
     }});
     }
     // create function saveInGoogleCalendar
