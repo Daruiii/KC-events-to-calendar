@@ -78,11 +78,13 @@
     const events = document.getElementById('events');
     if (data.length == 0) {
         const eventElement = document.createElement('div');
-        eventElement.className = 'd-flex justify-content-center flex-row align-items-center mb-3 rounded-3 px-4 pt-3 pb-3 ';
-        eventElement.style.backgroundColor = '#1c243c';
+        eventElement.className = 'd-flex justify-content-center flex-column align-items-center ';
         eventElement.innerHTML = `
-        <div class="col-xs-3">
+        <div class="col-xs-3 d-flex justify-content-center flex-row align-items-center mb-2 rounded-3 px-4 pt-3 pb-3" style="background-color: #1c243c;">
         <h3 class="fw-bold" style="color:#a5a19a;">Aucun événement à venir</h3>
+        </div>
+        <div class="col-xs-3">
+        <p class="fw-bold" style="color:#a5a19a;"><a class="hover-url" href="https://lebluewall.fr/calendar" target="_blank">(voir sur le blue wall)</a></p>
         </div>
         `
         events.appendChild(eventElement);
