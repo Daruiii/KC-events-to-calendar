@@ -14,6 +14,17 @@
     // create function displayResults
     function displayResults(data2){
         const results = document.getElementById('results');
+        if (data2.length == 0) {
+            const resultElement = document.createElement('div');
+            resultElement.className = 'd-flex justify-content-center flex-row align-items-center mb-3 rounded-3 px-4 pt-3 pb-3 ';
+            resultElement.style.backgroundColor = '#1c243c';
+            resultElement.innerHTML = `
+            <div class="col-xs-3">
+            <h3 class="fw-bold" style="color:#a5a19a;">Aucun résultat à afficher</h3>
+            </div>
+            `
+            results.appendChild(resultElement);
+        }
         data2.forEach(result => {
             // create a new element list item for each event and add it to the list
             const resultElement = document.createElement('div');
