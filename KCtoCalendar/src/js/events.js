@@ -65,6 +65,17 @@
 
     function displayEvents(data) {
     const events = document.getElementById('events');
+    if (data.length == 0) {
+        const eventElement = document.createElement('div');
+        eventElement.className = 'd-flex justify-content-center flex-row align-items-center mb-3 rounded-3 px-4 pt-3 pb-3 ';
+        eventElement.style.backgroundColor = '#1c243c';
+        eventElement.innerHTML = `
+        <div class="col-xs-3">
+        <h3 class="fw-bold" style="color:#a5a19a;">Aucun événement à venir</h3>
+        </div>
+        `
+        events.appendChild(eventElement);
+    }
     data.forEach(event => {
         // create a new element list item for each event and add it to the list
         const eventElement = document.createElement('div');
