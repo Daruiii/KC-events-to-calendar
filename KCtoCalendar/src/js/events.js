@@ -119,8 +119,12 @@
         let startMoreOneHour = new Date(event.start);
         let endMoreOneHour = new Date(event.end);
         let dateNow = new Date();
+        // console log dateNow format : dd/mm/yyyy hh:mm
+        let completeDateNow = dateNow.toString().slice(8, 10) + "/" + dateNow.toString().slice(4, 7) + "/" + dateNow.toString().slice(11, 15) + " " + dateNow.toString().slice(16, 21);
+        let completeStartMoreOneHour = startMoreOneHour.toString().slice(8, 10) + "/" + startMoreOneHour.toString().slice(4, 7) + "/" + startMoreOneHour.toString().slice(11, 15) + " " + startMoreOneHour.toString().slice(16, 21);
+        let completeEndMoreOneHour = endMoreOneHour.toString().slice(8, 10) + "/" + endMoreOneHour.toString().slice(4, 7) + "/" + endMoreOneHour.toString().slice(11, 15) + " " + endMoreOneHour.toString().slice(16, 21);
         // add one hour to the existing date to avoid the bug of the date
-        if (startMoreOneHour.toString().slice(16, 21) <=  dateNow.toString().slice(16, 21) && endMoreOneHour.toString().slice(16, 21) >= dateNow.toString().slice(16, 21)) {
+        if (completeStartMoreOneHour <= completeDateNow && completeEndMoreOneHour >= completeDateNow) {
             eventElement.innerHTML += `
         <div class="col-xs-3 ms-4 fw-bold mt-3">
             <a class="encours" href="https://www.twitch.tv/kamet0" target="_blank"><p>Match en cours<p/></a>
