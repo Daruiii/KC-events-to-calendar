@@ -130,6 +130,16 @@
             <a class="encours" href="https://www.twitch.tv/kamet0" target="_blank"><p>Match en cours<p/></a>
         </div>
         `
+        }
+        else if (startMoreOneHour.toString().slice(8, 10) == dateNow.toString().slice(8, 10) && startMoreOneHour.toString().slice(5, 7) == dateNow.toString().slice(5, 7) && startMoreOneHour.toString().slice(0, 4) == dateNow.toString().slice(0, 4)) {
+            eventElement.innerHTML += `
+        <div class="col-xs-3 ms-4 fw-bold mt-3">
+            <p>Aujourd'hui</p>
+        </div>
+        <div class="col-xs-3 ms-2 fw-bold mt-3" style="color:#a5a19a;">
+        <p>${startMoreOneHour.toString().slice(16, 21)} </p>
+        </div>
+        `
         } else {
             eventElement.innerHTML += `
         <div class="col-xs-3 ms-3 fw-bold mt-3" style="color:#a5a19a;">
